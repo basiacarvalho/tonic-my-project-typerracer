@@ -75,15 +75,17 @@ I independently planned the workflow and sequence of actions. I then used Gemini
 
 If given more time I would try to implement or consider using:
 
-- Validation: Zod.
+- I would start with a smooth way of providing and adding typing sentences.
+- I would re-think and extend the "game" logic: thinking about rounds, etc.
+- Try implementing - validation with Zod.
 - Data Fetching: TanStack Query (React Query)
-- UI Library like: shadcn/ui (based on Tailwind CSS).
+- Think about using UI Library like: shadcn/ui (based on Tailwind CSS).
 - Extend metrics and stats calculations on accuracy together with handling edge cases.
-- Dive into the topic of testing my app.
-- Work on the user experience and gaming experience, for example: progress bar, some visuals, entertaining comments during the game.
+- Work on the user experience and gaming experience, for example:
+  progress bar, some visuals, entertaining comments during the game.
+- Dive into the topic of testing the app.
 - Spend more time on more modern, catchy, clean layout.
-- I would re-think and extend the "game" logic: thinking about rounds, providing sentences for typing, etc.
-- Think about screen readers, SEO, scalability.
+- Think more about screen readers, SEO, scalability.
 
 ### Author
 
