@@ -62,13 +62,9 @@ The basic concepts of the project have been met, however further ideas may be im
 ### My Task Approach
 
 - In-depth review of the assignment.
-
 - Analysis of individual requirements.
-
 - Rapid research on developing "TypeRacer" style applications.
-
 - Defining the Tech Stack.
-
 - Creating a roadmap based on the provided timeframe.
 
 Since many of the concepts and areas required for this task were new to me—and the deadline demanded strict prioritization and time management—I decided to build this application through close collaboration with Gemini, leveraging its full potential.
