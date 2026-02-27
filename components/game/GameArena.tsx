@@ -5,6 +5,7 @@ interface GameArenaProps {
   setUserInput: (input: string) => void;
   timeLeft: number;
   targetText: string;
+  wpm: number;
 }
 
 export default function GameArena({
@@ -14,6 +15,7 @@ export default function GameArena({
   setUserInput,
   timeLeft,
   targetText,
+  wpm,
 }: GameArenaProps) {
   return (
     <section aria-labelledby="arena-heading" className="space-y-6">
@@ -53,7 +55,7 @@ export default function GameArena({
             Current Velocity
           </span>
           <span className="text-2xl font-mono font-bold text-blue-600">
-            0 <span className="text-sm text-gray-400">WPM</span>
+            {wpm} <span className="text-sm text-gray-400">WPM</span>
           </span>
         </div>
       </div>
