@@ -6,6 +6,10 @@ import IntroSection from "@/components/game/IntroSection";
 import GameArena from "@/components/game/GameArena";
 import Leaderboard from "@/components/game/Leaderboard";
 
+const MILLISECONDS_PER_SECOND = 1000;
+const SECONDS_PER_MINUTE = 60;
+const CHARACTERS_PER_WORD = 5;
+
 export default function Home() {
   const [gameState, setGameState] = useState("lobby");
   const [userInput, setUserInput] = useState("");
@@ -17,29 +21,31 @@ export default function Home() {
     "The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men.";
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    if (gameState !== "racing") return;
 
-    if (gameState === "racing" && timeLeft > 0) {
-      interval = setInterval(() => {
-        setTimeLeft((prev) => prev - 1);
-        setNow(Date.now()); // Update "now" safely inside the effect
-      }, 1000);
-    }
+    const interval = setInterval(() => {
+      setNow(Date.now());
 
-    if (timeLeft === 0 && gameState === "racing") {
-      setGameState("finished");
-    }
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          setGameState("finished");
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
 
     return () => clearInterval(interval);
-  }, [gameState, timeLeft]);
+  }, [gameState]);
 
-  // --- DERIVED STATE (Pure calculation) ---
   let wpm = 0;
-  // We use the 'now' state variable instead of calling Date.now()
   if (startTime && now && userInput.length > 0) {
-    const timeElapsedInMinutes = (now - startTime) / 1000 / 60;
-    // Standard formula: (chars / 5) / minutes
-    wpm = Math.round(userInput.length / 5 / timeElapsedInMinutes);
+    const timeElapsedInMinutes =
+      (now - startTime) / MILLISECONDS_PER_SECOND / SECONDS_PER_MINUTE;
+    wpm = Math.round(
+      userInput.length / CHARACTERS_PER_WORD / timeElapsedInMinutes,
+    );
   }
 
   const startRace = () => {
@@ -47,7 +53,7 @@ export default function Home() {
     setGameState("racing");
     setUserInput("");
     setStartTime(start);
-    setNow(start); // Initialize now so calculation works immediately
+    setNow(start);
     setTimeLeft(30);
   };
 
