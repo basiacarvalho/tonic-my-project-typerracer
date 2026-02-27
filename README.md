@@ -69,7 +69,7 @@ The basic concepts of the project have been met, however further ideas may be im
 
 Since many of the concepts and areas required for this task were new to me—and the deadline demanded strict prioritization and time management—I decided to build this application through close collaboration with Gemini, leveraging its full potential.
 
-I independently planned the workflow and sequence of actions. I then used Gemini to generate the project's HTML and Tailwind CSS based on my specific guidelines. While I authored the README file myself, I primarily utilized Gemini to develop the core logic and implement Supabase and Zod.
+I independently planned the workflow and sequence of actions. I then used Gemini to generate the project's HTML and Tailwind CSS based on my specific guidelines. While I authored the README file myself, I primarily utilized Gemini to develop the core logic and implement Supabase.
 
 ### Next Steps
 
@@ -84,7 +84,6 @@ If given more time I would try to implement or consider using:
 - Spend more time on more modern, catchy, clean layout.
 - I would re-think and extend the "game" logic: thinking about rounds, providing sentences for typing, etc.
 - Think about screen readers, SEO, scalability.
-- For security, I would implement Row Level Security (RLS) in Supabase to prevent players from editing others' scores
 
 ### Author
 
